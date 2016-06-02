@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import ConversationsReducer from './conversations_reducer';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
-})
+  conversations: ConversationsReducer
+});
 
 export default rootReducer;

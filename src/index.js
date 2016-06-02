@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
-
-import App from './components/app';
+import { Router, browserHistory } from 'react-router';
 import reducers from './reducers';
+import routes from './routes';
 
-import $ from'jquery';
+import $ from 'jquery';
 import 'j-toker';
 
 // Configure auth with j-toker
@@ -19,7 +19,7 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
+    <Router history={browserHistory} routes={routes} />
   </Provider>,
   document.querySelector('.container')
 );
