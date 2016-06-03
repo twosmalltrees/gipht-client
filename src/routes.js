@@ -16,10 +16,10 @@ import SignIn from './containers/sign_in';
 
 export default(
   <Route path="/" component={App}>
-    <IndexRoute component={ConversationsIndex} />
+    <IndexRoute path="conversations" component={ConversationsIndex} />
     <Route path="sign_up" component={SignUp} />
     <Route path="sign_in" component={SignIn} />
     <Route path="conversations" component={ConversationsIndex} />
-    <Route path="conversations/:conversationId/messages" component={ConversationShow} />
+    <Route path="conversations/:conversationId/messages" component={ConversationsShow} />
   </Route>
 );
